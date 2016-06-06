@@ -278,7 +278,6 @@ class PrestaShopWebService(object):
             headers, body = self.encode_multipart_formdata(files)
             return self._parse(self._execute(url, 'POST', body=body, add_headers=headers)[2])
         elif xml is not None:
-            #TODO
             headers = {'Content-Type': 'text/xml'}
             return self._parse(self._execute(url, 'POST', body=xml, add_headers=headers)[2])
         else:
